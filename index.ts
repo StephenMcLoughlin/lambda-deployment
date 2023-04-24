@@ -6,8 +6,11 @@ export const handler: Handler = async (event: APIGatewayProxyEvent): Promise<API
     const randomNumber = Math.floor(Math.random() * max)
 
     const response = {
-        statuscode: 200,
-        body: `Random number is ${randomNumber}`
+        "statusCode": 200,
+        "headers": {
+            'Content-Type': 'text/html',
+        },
+        "body": `Random number is ${randomNumber}`
     }
     return response
 }
